@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html dir="rtl" lang="ar-sa" class="no-js">
 <head>
     <title>
@@ -25,9 +25,15 @@
 
     .img1{
         height: 100px;
+        width: 100px;
         position: relative;
         top: -550px;
-        right: -450px;
+        right: -300px;
+        z-index: 10;
+    }
+    .img2{
+        position: relative;
+        right: 100px;
     }
     .data {
             font-family: 'Cairo', sans-serif;
@@ -277,13 +283,13 @@
                                                 <option value="PageWidth">Page Width</option>
                                                 <option value="FullPage">Whole Page</option>
                                                 <option value="500">500%</option>
-                                                <option value="200">200%</option>
-                                                <option value="150">150%</option>
-                                                <option selected="selected" value="100">100%</option>
-                                                <option value="75">75%</option>
-                                                <option value="50">50%</option>
-                                                <option value="25">25%</option>
-                                                <option value="10">10%</option>
+                                                <option value="400">200%</option>
+                                                <option value="300">150%</option>
+                                                <option selected="selected" value="200">100%</option>
+                                                <option value="150">75%</option>
+                                                <option value="100">50%</option>
+                                                <option value="75">25%</option>
+                                                <option value="50">10%</option>
                                             </select>
                                         </td>
                                     </tr>
@@ -522,7 +528,7 @@
 <!--####################################################################################-->
 <!--####################################################################################-->
     <div class="homePage">
-        <img src="abs6.jpeg" width="150px" class="img1">
+        <img src="abs6.jpeg" class="img1">
         <img src="pill.png" class="img2">
     </div>
     
@@ -735,33 +741,44 @@
 
 <script>
 
-    //التكبير
-    document.getElementById('zoomControl').addEventListener('change', function() {
-    var zoomValue = this.value;
+// وظيفة لتحديث التكبير
+function updateZoom(zoomValue) {
     var homePageElements = document.querySelectorAll('.homePage');
 
     homePageElements.forEach(function(element) {
         switch (zoomValue) {
             case 'PageWidth':
-                // Set to Page Width (example implementation)
+                // تعيين عرض الصفحة
                 element.style.width = '100%';
                 element.style.transform = 'none';
                 break;
             case 'FullPage':
-                // Set to Whole Page (example implementation)
+                // تعيين عرض الصفحة بالكامل
                 element.style.width = '100%';
                 element.style.height = '100%';
                 element.style.transform = 'none';
                 break;
             default:
-                // Apply zoom percentage
+                // تطبيق نسبة التكبير
                 var zoomPercent = parseInt(zoomValue, 10);
                 element.style.transform = 'scale(' + zoomPercent / 100 + ')';
                 element.style.transformOrigin = '0 0';
                 break;
         }
     });
+}
+
+// تعيين التكبير الافتراضي إلى 200%
+document.addEventListener('DOMContentLoaded', function() {
+    updateZoom(200); // تعيين التكبير الافتراضي إلى 200%
 });
+
+// إضافة مستمع لتغيير التحكم بالتكبير
+document.getElementById('zoomControl').addEventListener('change', function() {
+    var zoomValue = this.value;
+    updateZoom(zoomValue);
+});
+
 
 
 </script>
