@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html dir="rtl" lang="ar-sa" class="no-js">
 <head>
     <title>
@@ -25,15 +25,9 @@
 
     .img1{
         height: 100px;
-        width: 100px;
         position: relative;
         top: -550px;
-        right: -300px;
-        z-index: 10;
-    }
-    .img2{
-        position: relative;
-        right: 100px;
+        right: -450px;
     }
     .data {
             font-family: 'Cairo', sans-serif;
@@ -283,13 +277,13 @@
                                                 <option value="PageWidth">Page Width</option>
                                                 <option value="FullPage">Whole Page</option>
                                                 <option value="500">500%</option>
-                                                <option value="400">200%</option>
-                                                <option value="300">150%</option>
-                                                <option selected="selected" value="200">100%</option>
-                                                <option value="150">75%</option>
-                                                <option value="100">50%</option>
-                                                <option value="75">25%</option>
-                                                <option value="50">10%</option>
+                                                <option value="200">200%</option>
+                                                <option value="150">150%</option>
+                                                <option selected="selected" value="100">100%</option>
+                                                <option value="75">75%</option>
+                                                <option value="50">50%</option>
+                                                <option value="25">25%</option>
+                                                <option value="10">10%</option>
                                             </select>
                                         </td>
                                     </tr>
@@ -528,7 +522,7 @@
 <!--####################################################################################-->
 <!--####################################################################################-->
     <div class="homePage">
-        <img src="abs6.jpeg" class="img1">
+        <img src="abs6.jpeg" width="150px" class="img1">
         <img src="pill.png" class="img2">
     </div>
     
@@ -579,7 +573,7 @@
                                                 <td style="height:6.00mm;width:0.00mm"></td>
                                                 <td></td>
                                                 <td colspan="5">
-                                                    <div style="width:47.04mm;">    نذير حسن محمد الحطامي  </div> <!-- Sample Data -->
+                                                    <div style="width:47.04mm;">    عادل محمد مارش عبدالله   </div> <!-- Sample Data -->
                                                 </td>
                                             </tr>
                                                <tr>
@@ -591,7 +585,7 @@
                                                    <td></td>
                                                    <td>
                                                        <div role="navigation" aria-label="Report text" style="width:35.43mm;min-width: 35.43mm;min-height: 6.00mm;display: flex;align-items:center;justify-content:flex-end;" class="Abfe95305ad2042f89df621f147b2c97619">
-                                                           <div style="width:34.02mm;min-width: 34.02mm;">2278401449</div>
+                                                           <div style="width:34.02mm;min-width: 34.02mm;">2504576550</div>
                                                        </div>
                                                    </td>
                                                    <td rowspan="9" colspan="5"></td>
@@ -623,7 +617,7 @@
                                                    <td></td>
                                                    <td>
                                                        <div role="navigation" aria-label="Report text" style="width:35.43mm;min-width: 35.43mm;min-height: 6.00mm;display: flex;align-items:center;justify-content:flex-end;" class="Abfe95305ad2042f89df621f147b2c97628">
-                                                           <div style="width:34.02mm;min-width: 34.02mm;">عامل شحن وتفريغ </div>
+                                                           <div style="width:34.02mm;min-width: 34.02mm;">عامل </div>
                                                        </div>
                                                    </td>
                                                </tr>
@@ -741,44 +735,33 @@
 
 <script>
 
-// وظيفة لتحديث التكبير
-function updateZoom(zoomValue) {
+    //التكبير
+    document.getElementById('zoomControl').addEventListener('change', function() {
+    var zoomValue = this.value;
     var homePageElements = document.querySelectorAll('.homePage');
 
     homePageElements.forEach(function(element) {
         switch (zoomValue) {
             case 'PageWidth':
-                // تعيين عرض الصفحة
+                // Set to Page Width (example implementation)
                 element.style.width = '100%';
                 element.style.transform = 'none';
                 break;
             case 'FullPage':
-                // تعيين عرض الصفحة بالكامل
+                // Set to Whole Page (example implementation)
                 element.style.width = '100%';
                 element.style.height = '100%';
                 element.style.transform = 'none';
                 break;
             default:
-                // تطبيق نسبة التكبير
+                // Apply zoom percentage
                 var zoomPercent = parseInt(zoomValue, 10);
                 element.style.transform = 'scale(' + zoomPercent / 100 + ')';
                 element.style.transformOrigin = '0 0';
                 break;
         }
     });
-}
-
-// تعيين التكبير الافتراضي إلى 200%
-document.addEventListener('DOMContentLoaded', function() {
-    updateZoom(200); // تعيين التكبير الافتراضي إلى 200%
 });
-
-// إضافة مستمع لتغيير التحكم بالتكبير
-document.getElementById('zoomControl').addEventListener('change', function() {
-    var zoomValue = this.value;
-    updateZoom(zoomValue);
-});
-
 
 
 </script>
