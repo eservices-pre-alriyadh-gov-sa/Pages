@@ -47,10 +47,10 @@
         }
         #loader {
             display: none;
-            width: 200px;
-            height: 100px;
+            width: 300px;
+            height: 150px;
             position: absolute;
-            top: 50px;
+            top: 20px;
             left: 400px;
             z-index: 10; /* قيمة أعلى لجعل العنصر يظهر فوق العناصر الأخرى */
             background-color:white;
@@ -58,6 +58,7 @@
         }
 
         img {
+           
             position: relative;
             z-index: 1; /* تأكد من وجود z-index للصورة حتى تعمل مع z-index الخاص بالـ #loader */
         }
@@ -449,10 +450,10 @@
                         <div class="dot dot5"></div>
                     </div>
                 </td>
-                <td class="WaitInfoCell">
-                    <span class="WaitText">Loading...</span>
+                <td class="WaitInfoCell" >
+                    <span class="WaitText" style="font-size: 30px;">Loading...</span>
                     <div class="CancelLinkDiv">
-                        <a class="CancelLinkText" href="javascript:void(0);">Cancel</a>
+                        <a class="CancelLinkText" style="font-size: 30px;" href="javascript:void(0);">Cancel</a>
                     </div>
                 </td>
             </tr>
@@ -464,8 +465,8 @@
 <!--####################################################################################-->
 <!--####################################################################################-->
     <div class="homePage">
-        <img src="r1.jpeg" class="img1">
-        <img src="pill.png" class="img2">
+        <img src="r1.jpeg" class="img1 hidden" >
+        <img src="pill.png" class="img2 hidden">
     </div>
     
 </div>
@@ -627,44 +628,50 @@
 
 
 <script>
+
+
+
+        document.addEventListener("DOMContentLoaded", function() {
+            // عرض الـ loader عند تحميل الصفحة
+            var loader = document.getElementById('loader');
+            loader.style.display = 'block';
+
+            setTimeout(function() {
+                // إخفاء الـ loader بعد 3 ثواني
+                loader.style.display = 'none';
+                const images = document.querySelectorAll('img.hidden');
+images.forEach(img => img.classList.remove('hidden'));
+
+               
+            }, 1000); // 3000ms = 3 ثواني
+        });
+   
+
     function handleClick() {
          // تحديد العناصر
          var images = document.querySelectorAll('img');
          var textDiv = document.getElementById('person_data');
 
-
-            
-        // عرض الـ loader
-        var loader = document.getElementById('loader');
-        loader.style.display = 'block';
-
-        setTimeout(function() {
-            
-            // إخفاء الـ loader بعد 3 ثواني
-            loader.style.display = 'none';
-
-           
-
-            // التحقق من حالة العناصر
-            var imagesHidden = Array.from(images).every(function(img) {
+ // التحقق من حالة العناصر
+ var imagesHidden = Array.from(images).every(function(img) {
                 return img.classList.contains('hidden');
             });
 
-            if (imagesHidden) {
+         if (imagesHidden) {
             
-                // إظهار الصور وإخفاء النص
-                images.forEach(function(img) {
-                    img.classList.remove('hidden');
-                });
-                textDiv.style.display = 'none';
-            } else {
-                // إخفاء الصور وعرض النص
-                images.forEach(function(img) {
-                    img.classList.add('hidden');
-                });
-                textDiv.style.display = 'block';
-            }
-        }, 3000); // 3000ms = 3 ثواني
+            // إظهار الصور وإخفاء النص
+            images.forEach(function(img) {
+                img.classList.remove('hidden');
+            });
+            textDiv.style.display = 'none';
+        } else {
+            // إخفاء الصور وعرض النص
+            images.forEach(function(img) {
+                img.classList.add('hidden');
+            });
+            textDiv.style.display = 'block';
+        }
+      
     }
 </script>
 
