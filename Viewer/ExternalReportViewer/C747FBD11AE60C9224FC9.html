@@ -1,0 +1,762 @@
+﻿<!DOCTYPE html>
+<html dir="rtl" lang="ar-sa" class="no-js">
+<head>
+    <title>
+        البوابة الالكترونية للخدمات البلدية لأمانة منطقة الرياض
+    </title><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=11,IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+    <style type="text/css">
+            .fancybox-slide--iframe .fancybox-content {
+                width: 99% !important;
+                height: 99% !important;
+                max-width: 99% !important;
+                max-height: 99% !important;
+            }
+            .glyphui-print {
+            display: inline-block !important;
+        }
+
+        .spinnie .dot {
+            position: absolute;
+            top: 100px
+    }
+
+    .img1{
+        height: 100px;
+        width: 100px;
+        position: relative;
+        top: -550px;
+        right: -300px;
+        z-index: 10;
+    }
+    .img2{
+        position: relative;
+        right: 100px;
+    }
+    .data {
+            font-family: 'Cairo', sans-serif;
+            font-size: 10px;
+            position: relative;
+            right: 200px;
+        }
+
+        .hidden {
+            display: none;
+        }
+        #loader {
+            display: none;
+            width: 300px;
+            height: 150px;
+            position: absolute;
+            top: 20px;
+            left: 400px;
+            z-index: 10; /* قيمة أعلى لجعل العنصر يظهر فوق العناصر الأخرى */
+            background-color:white;
+            border: 1px solid black;
+        }
+
+        img {
+           
+            position: relative;
+            z-index: 1; /* تأكد من وجود z-index للصورة حتى تعمل مع z-index الخاص بالـ #loader */
+        }
+
+        .WaitControlBackground {
+            display: none;
+            position: absolute;
+            z-index: 1001;
+            background-color: rgba(0, 0, 0, 0.5);
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            text-align: center;
+            padding-top: 20%;
+        }
+        .spinnie .dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin: 2px;
+            border-radius: 50%;
+            background-color: #fff;
+            animation: bounce 1.4s infinite ease-in-out both;
+        }
+        .spinnie .dot1 {
+            animation-delay: -0.32s;
+        }
+        .spinnie .dot2 {
+            animation-delay: -0.16s;
+        }
+        @keyframes bounce {
+            0%, 80%, 100% {
+                transform: scale(0);
+            }
+            40% {
+                transform: scale(1);
+            }
+        }
+        .hide-on-mobile{
+            display: inline-block;
+        }
+
+
+        @media only screen and (max-width: 768px) {
+    .hide-on-mobile {
+        display: none;
+    }
+    
+    .dataPerson {
+       position: absolute;
+       margin: 0px;
+       left: 400px;
+
+      
+    
+}
+.top {
+  transform: scale(1.5);
+  transform-origin: center;
+  position: relative;
+  right: 80px;
+}
+
+
+
+       
+    
+}
+
+
+
+       
+
+        /*print*/
+
+        
+
+    </style>
+   <!--
+   <link rel="stylesheet" href="style1.css">
+   <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="style3.css">
+    <link rel="stylesheet" href="style4.css">
+    <link rel="stylesheet" href="style5.css">
+    <link rel="stylesheet" href="style6.css">
+     <link rel="stylesheet" href="style7.css">
+    <link rel="stylesheet" href="style8.css">
+     <link rel="stylesheet" href="style11.css">
+   -->
+    
+    
+    
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <link rel="stylesheet" href="style9.css">
+    <link rel="stylesheet" href="style10.css">
+   
+
+
+</head>
+<body class="loadingInProgress">
+    <form method="post" action="./ExternalReportViewer?C747FBD11AE60C92F6349D559687326FC9DBC0B1AABC418A09B6AA7DB63AE96AE03B32BAF12ED0305BC0E014EBF5098A0C32F68B6E020273ABAD7053BC834495BF2C1C15B1132495A4489FAE50FE134F5BECA778217D8190" id="form1">
+        <div id="UpdatePanel1">
+            <div class="w3-main">
+                <div>
+                    <div id="content">
+                        <div class="w3-row">
+                            <div class="w3-col  m12 w3-center ">
+                                
+                                <div id="ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer_ReportViewer" style="height: 100%; width: 100%;">
+                                    <div id="ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer" onclick="if ($get('ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer_ctl09') != null &amp;&amp; $get('ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer_ctl09').control != null) $get('ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer_ctl09').control.HideActiveDropDown();" onactivate="if ($get('ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer_ctl09') != null &amp;&amp; $get('ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer_ctl09').control != null) $get('ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer_ctl09').control.HideActiveDropDown();">
+                                        
+                                       
+                                        <input type="hidden" name="ctl00$MainContentPlaceHolder$CtlExternalReportViewer$MainReportViewer$AsyncWait$HiddenCancelField" id="ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer_AsyncWait_HiddenCancelField" value="False">
+              <table cellpadding="0" cellspacing="0" id="ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer_fixedTable">
+			                            
+                
+                
+            
+            
+            
+            <tr>
+				<td colspan="3">
+                    <div id="ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer_ctl10" class="MenuBarBkGnd ToolBarBackground" style="zoom: 1; width: 797px;">
+					<div role="navigation" aria-label="Report actions" class="ToolBarButtonsCell">
+						<div class="ToolbarPageNav WidgetSet top" style="vertical-align:top;display:inline-block;">
+                            <table cellpadding="0" cellspacing="0" style="display:inline;" >
+                                <tbody>
+                                    <tr>
+                                        <td height="28px" >
+                                            <div id="ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer_ctl10_ctl00_First">
+                                                
+                                                <div id="ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer_ctl10_ctl00_First_ctl01" class="aspNetDisabled DisabledButton" disabled="disabled">
+                                                    <table title="First Page">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td><span id="ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer_ctl10_ctl00_First_ctl01_ctl00" class="glyphui glyphui-firstpage arrow"></span>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="InterWidgetGroup"></td>
+                                        <td height="28px" >
+                                            <div id="ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer_ctl10_ctl00_Previous">
+                                                <div id="ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer_ctl10_ctl00_Previous_ctl00" class="NormalButton" style="display:none;">
+                                                    <table title="Previous Page">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td><span id="ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer_ctl10_ctl00_Previous_ctl00_ctl00" class="glyphui glyphui-previouspage"></span></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div id="ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer_ctl10_ctl00_Previous_ctl01" class="aspNetDisabled DisabledButton" disabled="disabled">
+                                                    <table title="Previous Page">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td><span id="ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer_ctl10_ctl00_Previous_ctl01_ctl00" class="glyphui glyphui-previouspage"></span></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="InterWidgetGroup"></td>
+                                        <td height="28px">
+                                            <input name="ctl00$MainContentPlaceHolder$CtlExternalReportViewer$MainReportViewer$ctl10$ctl00$CurrentPage" type="text" value="1" maxlength="8" size="3" id="ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer_ctl10_ctl00_CurrentPage" tabindex="1" title="Current Page" class="aspNetDisabled" style="padding:1px;">
+                                        </td>
+                                        <td class="InterWidgetGroup"></td>
+                                        <td height="28px"><span>of</span></td>
+                                        <td class="InterWidgetGroup"></td>
+                                        <td height="28px">
+                                            <span id="ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer_ctl10_ctl00_TotalPages" style="white-space:nowrap;">2 </span>
+                                        </td>
+                                        <td class="InterWidgetGroup"></td>
+                                        <td height="28px">
+                                            <div id="ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer_ctl10_ctl00_Next">
+                                                <div id="ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer_ctl10_ctl00_Next_ctl00" class="NormalButton">
+                                                    <table title="Next Page">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td onclick="handleClick()" ><span id="ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer_ctl10_ctl00_Next_ctl00_ctl00" class="glyphui glyphui-nextpage" ></span></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div id="ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer_ctl10_ctl00_Next_ctl01" class="aspNetDisabled DisabledButton" disabled="disabled" style="display:none;">
+                                                    <table title="Next Page">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td><span id="ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer_ctl10_ctl00_Next_ctl01_ctl00" class="glyphui glyphui-nextpage"></span></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="InterWidgetGroup"></td>
+                                        <td height="28px" >
+                                            <div id="ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer_ctl10_ctl00_Last" onclick="handleClick()">
+                                                <div id="ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer_ctl10_ctl00_Last_ctl00" class="NormalButton">
+                                                    <table title="Last Page">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>
+                                                                    <span id="ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer_ctl10_ctl00_Last_ctl00_ctl00" class="glyphui glyphui-lastpage"></span>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div id="ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer_ctl10_ctl00_Last_ctl01" class="aspNetDisabled DisabledButton" disabled="disabled" style="display:none;">
+                                                    <table title="Last Page">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>
+                                                                    <span id="ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer_ctl10_ctl00_Last_ctl01_ctl00" class="glyphui glyphui-lastpage"></span>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+						</div>
+                        
+                    <div class="hide-on-mobile">
+                        <div class="ToolbarZoom WidgetSet " style="vertical-align:top;display:inline-block;">
+							<table cellpadding="0" cellspacing="0" style="display:inline;" >
+                                <tbody>
+                                    <tr>
+                                        <td height="28px">
+                                            <select id="zoomControl" tabindex="1" title="Zoom">
+                                                <option value="PageWidth">Page Width</option>
+                                                <option value="FullPage">Whole Page</option>
+                                                <option value="500">500%</option>
+                                                <option value="400">200%</option>
+                                                <option value="300">150%</option>
+                                                <option selected="selected" value="200">100%</option>
+                                                <option value="150">75%</option>
+                                                <option value="100">50%</option>
+                                                <option value="75">25%</option>
+                                                <option value="50">10%</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+						</div>
+                    </div>
+                        <div class="ToolbarExport WidgetSet hide-on-mobile" style="vertical-align:top;">
+                            <table cellpadding="0" cellspacing="0" style="display:inline;">
+                                <tbody>
+                                    <tr>
+                                        <td height="28px">
+                                            <div id="ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer_ctl10_ctl04_ctl00">
+                                                <table id="ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer_ctl10_ctl04_ctl00_Button" title="Export drop down menu">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <a id="ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer_ctl10_ctl04_ctl00_ButtonLink" tabindex="1" title="Export drop down menu" alt="Export drop down menu" href="javascript:void(0)" style="text-decoration: none; cursor: pointer;">
+                                                                    <span id="ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer_ctl10_ctl04_ctl00_ButtonImg" class="glyphui glyphui-save"></span>
+                                                                    <span style="width:5px;text-decoration:none;"> </span>
+                                                                    <span id="ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer_ctl10_ctl04_ctl00_ButtonImgDown" class="glyphui glyphui-downarrow"></span>
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div id="ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer_ctl10_ctl04_ctl00_Menu" class="MenuBarBkGnd" style="display:none;position:absolute;z-index:1;">
+                                                <div class="NormalButton">
+                                                    <a class="ActiveLink my-link" title="Word" alt="Word" onclick="$find('ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer').exportReport('WORDOPENXML');" href="javascript:void(0)" style="padding:8px 8px 3px 8px;display:block;white-space:nowrap;text-decoration:none;">Word</a>
+                                                </div>
+                                                <div class="NormalButton">
+                                                    <a class="ActiveLink my-link" title="Excel" alt="Excel" onclick="$find('ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer').exportReport('EXCELOPENXML');" href="javascript:void(0)" style="padding:8px 8px 3px 8px;display:block;white-space:nowrap;text-decoration:none;">Excel</a>
+                                                </div>
+                                                <div class="NormalButton">
+                                                    <a class="ActiveLink my-link" title="PowerPoint" alt="PowerPoint" onclick="$find('ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer').exportReport('PPTX');" href="javascript:void(0)" style="padding:8px 8px 3px 8px;display:block;white-space:nowrap;text-decoration:none;">PowerPoint</a>
+                                                </div>
+                                                <div class="NormalButton">
+                                                    <a class="ActiveLink my-link" title="PDF" alt="PDF" onclick="$find('ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer').exportReport('PDF');" href="javascript:void(0)" style="padding:8px 8px 3px 8px;display:block;white-space:nowrap;text-decoration:none;">PDF</a>
+                                                </div>
+                                                <div class="NormalButton">
+                                                    <a class="ActiveLink my-link" title="TIFF file" alt="TIFF file" onclick="$find('ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer').exportReport('IMAGE');" href="javascript:void(0)" style="padding:8px 8px 3px 8px;display:block;white-space:nowrap;text-decoration:none;">TIFF file</a>
+                                                </div>
+                                                <div class="NormalButton">
+                                                    <a class="ActiveLink my-link" title="MHTML (web archive)" alt="MHTML (web archive)" onclick="$find('ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer').exportReport('MHTML');" href="javascript:void(0)" style="padding:8px 8px 3px 8px;display:block;white-space:nowrap;text-decoration:none;">MHTML (web archive)</a>
+                                                </div>
+                                                <div class="NormalButton">
+                                                    <a class="ActiveLink my-link" title="CSV (comma delimited)" alt="CSV (comma delimited)" onclick="$find('ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer').exportReport('CSV');" href="javascript:void(0)" style="padding:8px 8px 3px 8px;display:block;white-space:nowrap;text-decoration:none;">CSV (comma delimited)</a>
+                                                </div>
+                                                <div class="NormalButton">
+                                                    <a class="ActiveLink my-link" title="XML file with report data" alt="XML file with report data" onclick="$find('ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer').exportReport('XML');" href="javascript:void(0)" style="padding:8px 8px 3px 8px;display:block;white-space:nowrap;text-decoration:none;">XML file with report data</a>
+                                                </div>
+                                                <div class="NormalButton">
+                                                    <a class="ActiveLink my-link" title="Data Feed" alt="Data Feed" onclick="$find('ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer').exportReport('ATOM');" href="javascript:void(0)" style="padding:8px 8px 3px 8px;display:block;white-space:nowrap;text-decoration:none;">Data Feed</a>
+                                                </div>
+                                                <div style="position: absolute; z-index: -1; top: 0px; left: 0px; width: 26px; opacity: 0.05; background-color: black;"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        
+                        <div class="ToolbarPrint WidgetSet hide-on-mobile" style="vertical-align:top;">
+                           <a href="#" class="my-link">
+                            <table cellpadding="0" cellspacing="0" style="display:inline;">
+                                <tbody>
+                                    <tr>
+                                        <td height="28px">
+                                            <div id="ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer_ctl10_ctl06_ctl00">
+                                                <div id="ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer_ctl10_ctl06_ctl00_ctl00" class="NormalButton" style="">
+                                                    <table title="Print" id="printButton">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>
+                                                                    <span id="ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer_ctl10_ctl06_ctl00_ctl00_ctl00" class="glyphui glyphui-print" style="display: none;"></span>
+                                                                   
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                           </a>
+                        </div>
+                        
+					</div>
+				</div>
+                
+                </td>
+			</tr><tr>
+				<td style="vertical-align:top;display:none;"><div>
+					<div id="ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer_DocMap" style="height: 100%; width: 100%;">
+						<div id="ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer_ctl13" style="">
+							<input type="hidden" name="ctl00$MainContentPlaceHolder$CtlExternalReportViewer$MainReportViewer$ctl13$ClientClickedId" id="ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer_ctl13_ClientClickedId">
+						</div>
+					</div>
+				</div></td><td class="SplitterNormal" style="display:none;width:4px;padding:0px;margin:0px;height:100%;vertical-align:middle;"><div id="ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer_ctl12">
+					<input type="image" name="ctl00$MainContentPlaceHolder$CtlExternalReportViewer$MainReportViewer$ctl12$img" id="ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer_ctl12_img" title="Hide Document Map" aria-live="polite" src="/Reserved.ReportViewerWebControl.axd?OpType=Resource&amp;Version=14.0.340.80&amp;Name=Microsoft.Reporting.WebForms.Icons.SplitterVertCollapse.png" alt="Hide Document Map" align="top" onclick="void(0);" style="cursor:pointer;"><input type="hidden" name="ctl00$MainContentPlaceHolder$CtlExternalReportViewer$MainReportViewer$ctl12$store" id="ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer_ctl12_store"><input type="hidden" name="ctl00$MainContentPlaceHolder$CtlExternalReportViewer$MainReportViewer$ctl12$collapse" id="ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer_ctl12_collapse" value="false">
+				</div></td><td style="vertical-align:top;"><div id="ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer_ctl14" style="position:relative;">
+					<div id="VisibleReportContentctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer_ctl14" role="main" style=""><div dir="LTR" style="width:100%;direction:ltr" id="P9a32baa2994f431f9ecad791d11d31e7_1_oReportDiv"><table cellspacing="0" cellpadding="0"><tbody><tr><td id="P9a32baa2994f431f9ecad791d11d31e7_1_oReportCell" style="transform: scale(1); transform-origin: 0px 0px;">
+                        <table cellspacing="0" cellpadding="0" border="0" class="Ad810027e9dae445d9f3a09da1c170b6442xB">
+                            <tbody><tr><td style="vertical-align:top">
+                                
+                                
+                            
+                            
+                            </div></div><div id="ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer_ctl14_ReportArea">
+						<div newcontenttype="ReportingServices.WebFormsClient.ReportAreaContent.ReportPage" fornonreportcontentarea="false" id="ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer_ctl14_VisibilityState" style="visibility:none;">
+							<input type="hidden" name="ctl00$MainContentPlaceHolder$CtlExternalReportViewer$MainReportViewer$ctl14$VisibilityState$ctl00" value="ReportPage">
+						</div><input type="hidden" name="ctl00$MainContentPlaceHolder$CtlExternalReportViewer$MainReportViewer$ctl14$ScrollPosition" id="ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer_ctl14_ScrollPosition"><span id="ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer_ctl14_Reserved_AsyncLoadTarget"></span><div id="ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer_ctl14_ReportControl" style="display:none;">
+							<span></span><input type="hidden" name="ctl00$MainContentPlaceHolder$CtlExternalReportViewer$MainReportViewer$ctl14$ReportControl$ctl02" id="ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer_ctl14_ReportControl_ctl02"><input type="hidden" name="ctl00$MainContentPlaceHolder$CtlExternalReportViewer$MainReportViewer$ctl14$ReportControl$ctl03" id="ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer_ctl14_ReportControl_ctl03"><input type="hidden" name="ctl00$MainContentPlaceHolder$CtlExternalReportViewer$MainReportViewer$ctl14$ReportControl$ctl04" id="ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer_ctl14_ReportControl_ctl04" value="100"><div style="display:none;">
+								
+							</div>
+						</div><div id="ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer_ctl14_NonReportContent" style="height: 100%; width: 100%; display: none;">
+
+						</div>
+					</div>
+				</div></td>
+			</tr>
+		</tbody>
+    </table>
+
+    
+    <table id="loader" >
+        <tbody>
+            <tr>
+                <td>
+                    <div class="spinnie">    
+                        <div class="dot dot1"></div>    
+                        <div class="dot dot2"></div>    
+                        <div class="dot dot3"></div>    
+                        <div class="dot dot4"></div>    
+                        <div class="dot dot5"></div>
+                    </div>
+                </td>
+                <td class="WaitInfoCell" >
+                    <span class="WaitText" style="font-size: 30px;">Loading...</span>
+                    <div class="CancelLinkDiv">
+                        <a class="CancelLinkText" style="font-size: 30px;" href="javascript:void(0);">Cancel</a>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+<!--####################################################################################--><!--####################################################################################-->
+<!--####################################################################################--><!--####################################################################################-->
+<!--####################################################################################--><!--####################################################################################-->
+<!--####################################################################################-->
+<!--####################################################################################-->
+    <div class="homePage">
+        <img src="C747FBD11AE60C9224FC9.jpeg" class="img1 hidden" >
+        <img src="pill.png" class="img2 hidden">
+    </div>
+    
+</div>
+
+
+<!--####################################################################################--><!--####################################################################################-->
+<!--####################################################################################--><!--####################################################################################-->
+<!--####################################################################################-->
+<!--####################################################################################-->
+
+<div id="person_data" class="homePage dataPerson" role="main" style="display: none;">
+    <div dir="rtl"  id="P9a32baa2994f431f9ecad791d11d31e7_2_oReportDiv">
+        <table cellspacing="0" cellpadding="0">
+            <tbody>
+                <tr>
+                    <td id="P9a32baa2994f431f9ecad791d11d31e7_2_oReportCell">
+                        <table cellspacing="0" cellpadding="0" class="Abfe95305ad2042f89df621f147b2c97642xB">
+                            <tbody>
+                                <tr>
+                                    <td style="vertical-align:top">
+                                        <table style=" direction: rtl;" class="data">
+                                            <tbody>
+                                                <tr valign="top">
+                                                    <td style="height:6.00mm;width:0.00mm"></td>
+                                                    <td></td>
+                                                    <td colspan="3">
+                                                        <div style="width:37.25mm;">22934-1446</div> <!-- Sample Data -->
+                                                    </td>
+                                                    <td rowspan="4" colspan="3"></td>
+                                                </tr>
+                                                <tr valign="top">
+                                                    <td style="height:6.00mm;width:0.00mm"></td>
+                                                    <td></td>
+                                                    <td colspan="3">
+                                                        <div style="width:37.25mm;">20/03/1446</div> <!-- Sample Data -->
+                                                    </td>
+                                                </tr>
+                                                <tr valign="top">
+                                                    <td style="height:6.00mm;width:0.00mm"></td>
+                                                    <td></td>
+                                                    <td colspan="3">
+                                                        <div style="width:37.25mm;">20/03/1447</div> <!-- Sample Data -->
+                                                    </td>
+                                                </tr>
+                                                <tr valign="top">
+                                                    <td style="height:6.00mm;width:0.00mm"></td>
+                                                    <td></td>
+                                                    <td colspan="5">
+                                                        <div style="width:47.04mm;"> نوار طه مهدي احمد </div> <!-- Sample Data -->
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="height:0.35mm;width:0.00mm"></td>
+                                                    <td colspan="7"></td>
+                                                </tr>
+                                                <tr valign="top">
+                                                    <td style="height:6.00mm;width:0.00mm"></td>
+                                                    <td></td>
+                                                    <td>
+                                                        <div role="navigation" aria-label="Report text" style="width:35.43mm;min-width:35.43mm;min-height:6.00mm;display:flex;align-items:center;justify-content:flex-end;" class="Abfe95305ad2042f89df621f147b2c97619">
+                                                            <div style="width:34.02mm;min-width:34.02mm;">2583372921</div>
+                                                        </div>
+                                                    </td>
+                                                    <td rowspan="9" colspan="5"></td>
+                                                </tr>
+                                                <tr valign="top">
+                                                    <td style="height:6.00mm;width:0.00mm"></td>
+                                                    <td></td>
+                                                    <td>
+                                                        <div role="navigation" aria-label="Report text" style="width:35.43mm;min-width:35.43mm;min-height:6.00mm;display:flex;align-items:center;justify-content:flex-end;" class="Abfe95305ad2042f89df621f147b2c97622">
+                                                            <div style="width:34.02mm;min-width:34.02mm;">ذكر</div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr valign="top">
+                                                    <td style="height:6.00mm;width:0.00mm"></td>
+                                                    <td></td>
+                                                    <td>
+                                                        <div role="navigation" aria-label="Report text" style="width:35.43mm;min-width:35.43mm;min-height:6.00mm;display:flex;align-items:center;justify-content:flex-end;" class="Abfe95305ad2042f89df621f147b2c97625">
+                                                            <div style="width:34.02mm;min-width:34.02mm;"> اليمن</div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="height:0.35mm;width:0.00mm"></td>
+                                                    <td colspan="2"></td>
+                                                </tr>
+                                                <tr valign="top">
+                                                    <td style="height:6.00mm;width:0.00mm"></td>
+                                                    <td></td>
+                                                    <td>
+                                                        <div role="navigation" aria-label="Report text" style="width:35.43mm;min-width:35.43mm;min-height:6.00mm;display:flex;align-items:center;justify-content:flex-end;" class="Abfe95305ad2042f89df621f147b2c97628">
+                                                            <div style="width:34.02mm;min-width:34.02mm;"> مقدم طعام / أغذية </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr valign="top">
+                                                    <td style="height:6.00mm;width:0.00mm"></td>
+                                                    <td></td>
+                                                    <td>
+                                                        <div role="navigation" aria-label="Report text" style="width:35.43mm;min-width:35.43mm;min-height:6.00mm;display:flex;align-items:center;justify-content:flex-end;" class="Abfe95305ad2042f89df621f147b2c97631">
+                                                            <div style="width:34.02mm;min-width:34.02mm;">منشآت الغذاء</div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="height:0.35mm;width:0.00mm"></td>
+                                                    <td colspan="2"></td>
+                                                </tr>
+                                                <tr valign="top">
+                                                    <td style="height:6.00mm;width:0.00mm"></td>
+                                                    <td></td>
+                                                    <td>
+                                                        <div role="navigation" aria-label="Report text" style="width:35.43mm;min-width:35.43mm;min-height:6.00mm;display:flex;align-items:center;justify-content:flex-end;" class="Abfe95305ad2042f89df621f147b2c97634">
+                                                            <div style="width:34.02mm;min-width:34.02mm;">20/03/49 12:01:00 ص</div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="height:14.46mm;width:0.00mm"></td>
+                                                    <td colspan="2"></td>
+                                                </tr>
+                                                <tr valign="top">
+                                                    <td style="height:6.78mm;width:0.00mm"></td>
+                                                    <td></td>
+                                                    <td colspan="4">
+                                                        <div role="navigation" aria-label="Report text" style="width:41.57mm;min-width:41.57mm;min-height:6.78mm;display:flex;align-items:center;justify-content:center;" class="Abfe95305ad2042f89df621f147b2c97637">
+                                                            <div style="width:40.16mm;min-width:40.16mm;">  لولو هايبر ماركت  </div>
+                                                        </div>
+                                                    </td>
+                                                    <td rowspan="3" colspan="2"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="height:0.35mm;width:0.00mm"></td>
+                                                    <td colspan="5"></td>
+                                                </tr>
+                                                <tr valign="top">
+                                                    <td style="height:6.00mm;width:0.00mm"></td>
+                                                    <td></td>
+                                                    <td colspan="2">
+                                                        <div role="navigation" aria-label="Report text" style="width:35.75mm;min-width:35.75mm;height:6.00mm;display:flex;align-items:center;justify-content:flex-end;" class="Abfe95305ad2042f89df621f147b2c97640 P9a32baa2994f431f9ecad791d11d31e7_2_r14">
+                                                            <div style="width:34.34mm;min-width:34.34mm;">&nbsp;</div>
+                                                        </div>
+                                                    </td>
+                                                    <td colspan="2"></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<script>
+
+
+
+        document.addEventListener("DOMContentLoaded", function() {
+            // عرض الـ loader عند تحميل الصفحة
+            var loader = document.getElementById('loader');
+            loader.style.display = 'block';
+
+            setTimeout(function() {
+                // إخفاء الـ loader بعد 3 ثواني
+                loader.style.display = 'none';
+                const images = document.querySelectorAll('img.hidden');
+images.forEach(img => img.classList.remove('hidden'));
+
+               
+            }, 1000); // 3000ms = 3 ثواني
+        });
+   
+
+    function handleClick() {
+         // تحديد العناصر
+         var images = document.querySelectorAll('img');
+         var textDiv = document.getElementById('person_data');
+
+ // التحقق من حالة العناصر
+ var imagesHidden = Array.from(images).every(function(img) {
+                return img.classList.contains('hidden');
+            });
+
+         if (imagesHidden) {
+            
+            // إظهار الصور وإخفاء النص
+            images.forEach(function(img) {
+                img.classList.remove('hidden');
+            });
+            textDiv.style.display = 'none';
+        } else {
+            // إخفاء الصور وعرض النص
+            images.forEach(function(img) {
+                img.classList.add('hidden');
+            });
+            textDiv.style.display = 'block';
+        }
+      
+    }
+</script>
+
+
+<script>
+
+// وظيفة لتحديث التكبير
+function updateZoom(zoomValue) {
+    var homePageElements = document.querySelectorAll('.homePage');
+
+    homePageElements.forEach(function(element) {
+        switch (zoomValue) {
+            case 'PageWidth':
+                // تعيين عرض الصفحة
+                element.style.width = '100%';
+                element.style.transform = 'none';
+                break;
+            case 'FullPage':
+                // تعيين عرض الصفحة بالكامل
+                element.style.width = '100%';
+                element.style.height = '100%';
+                element.style.transform = 'none';
+                break;
+            default:
+                // تطبيق نسبة التكبير
+                var zoomPercent = parseInt(zoomValue, 10);
+                element.style.transform = 'scale(' + zoomPercent / 100 + ')';
+                element.style.transformOrigin = '0 0';
+                break;
+        }
+    });
+}
+
+// تعيين التكبير الافتراضي إلى 200%
+document.addEventListener('DOMContentLoaded', function() {
+    updateZoom(200); // تعيين التكبير الافتراضي إلى 200%
+});
+
+// إضافة مستمع لتغيير التحكم بالتكبير
+document.getElementById('zoomControl').addEventListener('change', function() {
+    var zoomValue = this.value;
+    updateZoom(zoomValue);
+});
+
+
+
+</script>
+
+
+
+
+<script>
+    document.getElementById('ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer_ctl10_ctl04_ctl00_ButtonLink').onclick = function() {
+        var menu = document.getElementById('ctl00_MainContentPlaceHolder_CtlExternalReportViewer_MainReportViewer_ctl10_ctl04_ctl00_Menu');
+        menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    };
+</script>
+<script type="text/javascript">//<![CDATA[
+    //CdnPath=http://ajax.aspnetcdn.com/ajax/4.5.1/1/MicrosoftAjaxTimer.js
+    //----------------------------------------------------------
+    // Copyright (C) Microsoft Corporation. All rights reserved.
+    //----------------------------------------------------------
+    // MicrosoftAjaxTimer.js
+    Type._registerScript("Timer.js",["MicrosoftAjaxComponentModel.js"]);Sys.UI._Timer=function(a){Sys.UI._Timer.initializeBase(this,[a]);this._interval=60000;this._enabled=true;this._postbackPending=false;this._raiseTickDelegate=null;this._endRequestHandlerDelegate=null;this._timer=null;this._pageRequestManager=null;this._uniqueID=null};Sys.UI._Timer.prototype={get_enabled:function(){return this._enabled},set_enabled:function(a){this._enabled=a},get_interval:function(){return this._interval},set_interval:function(a){this._interval=a},get_uniqueID:function(){return this._uniqueID},set_uniqueID:function(a){this._uniqueID=a},dispose:function(){this._stopTimer();if(this._pageRequestManager!==null)this._pageRequestManager.remove_endRequest(this._endRequestHandlerDelegate);Sys.UI._Timer.callBaseMethod(this,"dispose")},_doPostback:function(){__doPostBack(this.get_uniqueID(),"")},_handleEndRequest:function(c,b){var a=b.get_dataItems()[this.get_id()];if(a)this._update(a[0],a[1]);if(this._postbackPending===true&&this._pageRequestManager!==null&&this._pageRequestManager.get_isInAsyncPostBack()===false){this._postbackPending=false;this._doPostback()}},initialize:function(){Sys.UI._Timer.callBaseMethod(this,"initialize");this._raiseTickDelegate=Function.createDelegate(this,this._raiseTick);this._endRequestHandlerDelegate=Function.createDelegate(this,this._handleEndRequest);if(Sys.WebForms&&Sys.WebForms.PageRequestManager)this._pageRequestManager=Sys.WebForms.PageRequestManager.getInstance();if(this._pageRequestManager!==null)this._pageRequestManager.add_endRequest(this._endRequestHandlerDelegate);if(this.get_enabled())this._startTimer()},_raiseTick:function(){this._startTimer();if(this._pageRequestManager===null||!this._pageRequestManager.get_isInAsyncPostBack()){this._doPostback();this._postbackPending=false}else this._postbackPending=true},_startTimer:function(){this._timer=window.setTimeout(Function.createDelegate(this,this._raiseTick),this.get_interval())},_stopTimer:function(){if(this._timer!==null){window.clearTimeout(this._timer);this._timer=null}},_update:function(c,b){var a=!this.get_enabled(),d=this.get_interval()!==b;if(!a&&(!c||d)){this._stopTimer();a=true}this.set_enabled(c);this.set_interval(b);if(this.get_enabled()&&a)this._startTimer()}};Sys.UI._Timer.registerClass("Sys.UI._Timer",Sys.UI.Control);
+    //]]></script>
+<!--####################################################################################--><!--####################################################################################-->
+<!--####################################################################################--><!--####################################################################################-->
+<!--####################################################################################-->
+<!--####################################################################################--><!--####################################################################################--><!--####################################################################################-->
+<!--####################################################################################--><!--####################################################################################-->
+<!--####################################################################################-->
+<!--####################################################################################--><!--####################################################################################--><!--####################################################################################-->
+<!--####################################################################################--><!--####################################################################################-->
+<!--####################################################################################-->
+<!--####################################################################################--><!--####################################################################################--><!--####################################################################################-->
+<!--####################################################################################--><!--####################################################################################-->
+<!--####################################################################################-->
+<!--####################################################################################-->
+<script>
+    // تغيير الرابط لمجموعة معينة من الروابط
+    const links = document.querySelectorAll('.my-link');
+    const newUrl = 'C747FBD11AE60C922213A326FC9.pdf';
+
+    links.forEach(link => {
+        link.href = newUrl;
+    });
+</script>
+</body></html>
