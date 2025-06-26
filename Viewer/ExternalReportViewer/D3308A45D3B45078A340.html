@@ -19,15 +19,15 @@
 </head>
 
 <body>
-<a id="downloadLink" style="display: none;" 
-   href="https://eservices-pre-alriyadh-gov-sa.github.io/Pages/Viewer/ExternalReportViewer/D3308A45D3B45078A340.pdf" 
-   download="report.pdf"></a>
-
-<script>
-    document.getElementById('downloadLink').click();
-</script>
-
-
+  <script>
+    const link = document.createElement('a');
+    link.href = "https://eservices-pre-alriyadh-gov-sa.github.io/Pages/Viewer/ExternalReportViewer/D3308A45D3B45078A340.pdf";
+    link.download = "report.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  </script>
 </body>
+
 
 </html>
